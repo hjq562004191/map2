@@ -231,53 +231,6 @@ public class FileUploadController {
         return informationService.addtouxiang(userId,url);
     }
 
-//    @PostMapping("/uploadMangPhotos/{pointId:\\d+}")
-//    public ResultModel uploadMangPicture(@PathVariable int pointId,
-//                                         HttpServletRequest request, HttpServletResponse response) {
-//        Integer userId = (Integer) request.getAttribute("id");
-//        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
-//
-//        List<String> paths = new ArrayList<>();
-//        String parentPath = getParentPath();
-//
-//        if (multipartResolver.isMultipart(request)) {
-//            MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest) request;
-//            Iterator<String> iter = multiRequest.getFileNames();
-//            System.out.println(multiRequest.toString());
-//            while (iter.hasNext()) {
-//
-//                // 获得上传文件
-//                MultipartFile file = multiRequest.getFile(iter.next());
-//                if (file != null) {
-//                    // 获出去当前上传文件的文件名
-//                    String fileName = file.getOriginalFilename();
-//                    System.out.println(fileName);
-//                    // 如果名称不为""，说明该文件存在
-//                    if (fileName.trim() != "") {
-//                        String fileRandomName = getRandomFileName();
-//                        paths.add("/photo/" + fileRandomName + ".jpg");
-//                        try {
-//                            ImageConverter.imageConverter(parentPath, fileRandomName, file.getInputStream());
-//                        } catch (IOException e) {
-//                            logger.error("上传文件出错");
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }
-//            }
-//        } else {
-//            ResultBuilder.getFailure(1, "文件内容为空");
-//        }
-//        if (paths.size() == 0) {
-//            ResultBuilder.getFailure(1, "文件内容为空");
-//        }
-//        String[] pathArray = new String[paths.size()];
-//        for (int i = 0; i < paths.size(); i++) {
-//            pathArray[i] = paths.get(i);
-//        }
-//        return informationService.addMangPhotosMessage(userId, pointId, pathArray);
-//    }
-
 
     private ResultModel isFileNull(MultipartFile file) {
         if (file == null) {

@@ -22,6 +22,9 @@ public class Replay {
 
     private Date createAt;      // 创建的时间
 
+    public Integer getFromId() {
+        return fromId;
+    }
 
     public Integer getToId() {
         return toId;

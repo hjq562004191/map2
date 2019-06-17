@@ -11,8 +11,8 @@ import java.util.List;
 @Mapper
 public interface ReplayMapper {
 
-    @Insert("INSERT INTO replay(comm_id, from_id, to_id, create_at,content)" +
-            " VALUES(#{commId}, #{fromId}, #{toId}, #{createAt},#{content})")
+    @Insert("insert into replay(comm_id,from_id,to_id,create_at,content)" +
+            "VALUES(#{commId},#{fromId},#{toId},#{createAt},#{content})")
     Integer save(Replay replay);
 
     @Update("UPDATE replay SET click = #{click} WHERE id = #{replayId}")
